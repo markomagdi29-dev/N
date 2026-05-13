@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>إلى بلبلة.. أجمل ما في حياتي</title>
+    <title>إلى بلبلة.. كل حياتي</title>
     <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -11,7 +11,7 @@
             --ink-color: #3d0000;
             --heart-red: #a4161a;
             --gold-accent: #c2a35d;
-            --soft-rose: #f5e1e1;
+            --bg-gradient: linear-gradient(135deg, #2b0001 0%, #4a0404 100%);
         }
 
         * {
@@ -21,117 +21,96 @@
         }
 
         body {
-            background-color: #1a0000; 
+            background: var(--bg-gradient); 
             color: var(--ink-color);
             font-family: 'Cairo', sans-serif;
-            overflow-x: hidden;
+            min-height: 100vh;
         }
 
-        /* الجزء العلوي */
+        /* الهيدر بلون سادة متدرج وفخم */
         .hero {
-            height: 100vh;
+            height: 60vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(rgba(26, 0, 0, 0.8), rgba(26, 0, 0, 0.8)), 
-                        url('image_2bb9da.jpg') no-repeat center center/cover;
-            color: #fff;
             text-align: center;
+            color: #fff;
         }
 
         .hero h1 {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 5.5rem;
-            margin-bottom: 20px;
-            color: var(--soft-rose);
-            text-shadow: 0 0 25px rgba(164, 22, 26, 1);
-            animation: fadeIn 2.5s ease;
+            font-size: 5rem;
+            margin-bottom: 10px;
+            color: #f5e1e1;
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease;
         }
 
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         /* الرسالة الورقية */
         .letter-paper {
-            max-width: 850px;
-            margin: -150px auto 100px;
+            max-width: 800px;
+            margin: -100px auto 100px;
             background: var(--paper-bg);
-            padding: 80px 60px;
-            border-radius: 5px;
-            box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+            padding: 60px;
+            border-radius: 8px;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
             position: relative;
             border: 1px solid var(--gold-accent);
+            z-index: 10;
             text-align: center;
         }
 
-        /* تنسيق صورة نبيلة داخل الرسالة */
-        .profile-img-container {
-            width: 250px;
-            height: 350px;
-            margin: 0 auto 40px;
+        /* تنسيق الصورة */
+        .inner-photo {
+            width: 260px;
+            margin: 0 auto 30px;
             border: 10px solid white;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
-            border-radius: 2px;
-            overflow: hidden;
-            transform: rotate(-2deg); /* إمالة بسيطة للجمالية */
-            transition: 0.5s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transform: rotate(-1deg);
         }
 
-        .profile-img-container:hover {
-            transform: rotate(0deg) scale(1.05);
-        }
-
-        .profile-img-container img {
+        .inner-photo img {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            display: block;
         }
 
         .letter-header {
             font-family: 'Aref Ruqaa', serif;
-            font-size: 3.5rem;
+            font-size: 3rem;
             color: var(--heart-red);
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .letter-body {
             font-family: 'Amiri', serif;
-            font-size: 1.8rem;
-            line-height: 2.2;
+            font-size: 1.7rem;
+            line-height: 2.1;
             color: var(--ink-color);
         }
 
-        .heart-divider {
+        .divider {
             color: var(--heart-red);
-            font-size: 2.5rem;
-            margin: 30px 0;
-            display: block;
+            font-size: 2rem;
+            margin: 25px 0;
         }
 
-        /* التذييل */
         footer {
-            background: #000;
-            color: var(--gold-accent);
             text-align: center;
-            padding: 100px 20px;
-            border-top: 3px solid var(--heart-red);
-        }
-
-        .final-word {
-            font-family: 'Aref Ruqaa', serif;
-            font-size: 3rem;
-            color: var(--heart-red);
-            margin-bottom: 10px;
+            padding: 50px 20px;
+            color: var(--gold-accent);
+            background: rgba(0,0,0,0.2);
         }
 
         @media (max-width: 600px) {
-            .hero h1 { font-size: 3.5rem; }
-            .letter-paper { padding: 40px 20px; margin: -80px 20px 60px; }
-            .profile-img-container { width: 200px; height: 280px; }
-            .letter-body { font-size: 1.5rem; }
+            .hero h1 { font-size: 3rem; }
+            .letter-paper { padding: 30px 20px; margin: -50px 15px 50px; }
+            .inner-photo { width: 200px; }
         }
     </style>
 </head>
@@ -139,45 +118,34 @@
 
     <section class="hero">
         <h1>يا بلبلة ❤️</h1>
-        <p>أنتِ الفن.. وأنتِ الرسالة</p>
     </section>
 
     <div class="letter-paper">
-        <!-- صورة نبيلة المضافة -->
-        <div class="profile-img-container">
-            <img src="image_2bb9da.jpg" alt="نبيلة">
+        <div class="inner-photo">
+            <img src="photo_2026-05-13_18-57-51.jpg" alt="بلبلة">
         </div>
 
         <h2 class="letter-header">يا بلبلة ❤️</h2>
         
         <div class="letter-body">
-            <p>
-                بجد مش عارف أوصفلك انتي بقيتي إيه بالنسبالي، بس كل اللي أعرفه إنك أجمل حاجة حصلتلي. 
-                من يوم ما دخلتي حياتي وانتي مغيرة كل حاجة للأحلى، حتى أيامي بقت ليها طعم تاني.
-            </p>
+            <p>بجد مش عارف أوصفلك انتي بقيتي إيه بالنسبالي، بس كل اللي أعرفه إنك أجمل حاجة حصلتلي. من يوم ما دخلتي حياتي وانتي مغيرة كل حاجة للأحلى، حتى أيامي بقت ليها طعم تاني.</p>
             
-            <span class="heart-divider">❦ ❤️ ❦</span>
+            <div class="divider">❦ ❤️ ❦</div>
 
-            <p>
-                بحب كلامك، بحب ضحكتك، بحب طريقتك، وبحب كل تفصيلة فيكي من غير ما أحس. 
-                انتي بقيتي جزء كبير من قلبي، ومكانك فيه محدش يقدر ياخده.
-            </p>
+            <p>بحب كلامك، بحب ضحكتك، بحب طريقتك، وبحب كل تفصيلة فيكي من غير ما أحس. انتي بقيتي جزء كبير من قلبي، ومكانك فيه محدش يقدر ياخده.</p>
 
-            <p>
-                لما بكون مضايق، مجرد وجودك بيهون عليا الدنيا، ولما بكون مبسوط بحب أشاركك كل حاجة، لأنك ببساطة أقرب حد لروحي[cite: 1].
-            </p>
+            <p>لما بكون مضايق، مجرد وجودك بيهون عليا الدنيا، ولما بكون مبسوط بحب أشاركك كل حاجة، لأنك ببساطة أقرب حد لروحي.</p>
 
-            <span class="heart-divider">❦ ❤️ ❦</span>
+            <div class="divider">❦ ❤️ ❦</div>
 
             <p style="font-weight: bold; color: var(--heart-red); font-size: 2rem;">
-                أنا بحبك أوي يا بلبلة، وحبك جوايا بيكبر كل يوم، وبتمنى أفضل معاكي وجنبك على طول ❤️[cite: 1]
+                أنا بحبك أوي يا بلبلة، وحبك جوايا بيكبر كل يوم، وبتمنى أفضل معاكي وجنبك على طول ❤️
             </p>
         </div>
     </div>
 
     <footer>
-        <p class="final-word">دائماً وأبداً.. لكي وحدك</p>
-        <p style="opacity: 0.7;">أجمل بورتفوليو لأجمل إنسانة في حياتي</p>
+        <p style="font-family: 'Aref Ruqaa', serif; font-size: 2rem;">دائماً وأبداً.. لكي وحدك</p>
     </footer>
 
 </body>
