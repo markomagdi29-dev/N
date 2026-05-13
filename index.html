@@ -3,1043 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REVA - منصة الربح من مشاهدة الفيديوهات</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>إلى بلبلة.. أجمل ما في حياتي</title>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cairo:wght@300;400;700&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --paper-bg: #fffcf9;
+            --ink-color: #3d0000;
+            --heart-red: #a4161a;
+            --gold-accent: #c2a35d;
+            --soft-rose: #f5e1e1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            background-color: #1a0000; 
+            color: var(--ink-color);
             font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
         }
-        .section-fade-in {
-            animation: fadeIn 0.5s ease-in-out;
+
+        /* الجزء العلوي */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(26, 0, 0, 0.8), rgba(26, 0, 0, 0.8)), 
+                        url('image_2bb9da.jpg') no-repeat center center/cover;
+            color: #fff;
+            text-align: center;
         }
+
+        .hero h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 5.5rem;
+            margin-bottom: 20px;
+            color: var(--soft-rose);
+            text-shadow: 0 0 25px rgba(164, 22, 26, 1);
+            animation: fadeIn 2.5s ease;
+        }
+
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(10px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        .progress-bar-container {
-            width: 100%;
-            height: 10px;
-            background-color: #e0e0e0;
+
+        /* الرسالة الورقية */
+        .letter-paper {
+            max-width: 850px;
+            margin: -150px auto 100px;
+            background: var(--paper-bg);
+            padding: 80px 60px;
             border-radius: 5px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #4F46E5 0%, #0D9488 100%);
-            transition: width 1s linear;
-        }
-        .bottom-nav-link.active {
-            color: #14B8A6; /* teal-500 */
-        }
-        .plan-card.active {
-            border-color: #14B8A6;
-            box-shadow: 0 0 15px rgba(20, 184, 166, 0.5);
-        }
-        .payment-tab.active {
-            color: #0D9488; /* teal-600 */
-            border-bottom-color: #0D9488;
-        }
-        #toast-notification.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-        .verification-input {
-            width: 40px;
-            height: 50px;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.9);
+            position: relative;
+            border: 1px solid var(--gold-accent);
             text-align: center;
-            font-size: 1.5rem;
-            font-weight: bold;
         }
-        /* Hide number input arrows */
-        input[type=number]::-webkit-inner-spin-button, 
-        input[type=number]::-webkit-outer-spin-button { 
-          -webkit-appearance: none; 
-          margin: 0; 
+
+        /* تنسيق صورة نبيلة داخل الرسالة */
+        .profile-img-container {
+            width: 250px;
+            height: 350px;
+            margin: 0 auto 40px;
+            border: 10px solid white;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            transform: rotate(-2deg); /* إمالة بسيطة للجمالية */
+            transition: 0.5s;
         }
-        input[type=number] {
-          -moz-appearance: textfield;
+
+        .profile-img-container:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .profile-img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .letter-header {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3.5rem;
+            color: var(--heart-red);
+            margin-bottom: 30px;
+        }
+
+        .letter-body {
+            font-family: 'Amiri', serif;
+            font-size: 1.8rem;
+            line-height: 2.2;
+            color: var(--ink-color);
+        }
+
+        .heart-divider {
+            color: var(--heart-red);
+            font-size: 2.5rem;
+            margin: 30px 0;
+            display: block;
+        }
+
+        /* التذييل */
+        footer {
+            background: #000;
+            color: var(--gold-accent);
+            text-align: center;
+            padding: 100px 20px;
+            border-top: 3px solid var(--heart-red);
+        }
+
+        .final-word {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3rem;
+            color: var(--heart-red);
+            margin-bottom: 10px;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 3.5rem; }
+            .letter-paper { padding: 40px 20px; margin: -80px 20px 60px; }
+            .profile-img-container { width: 200px; height: 280px; }
+            .letter-body { font-size: 1.5rem; }
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body>
 
-    <div id="app-container">
-        <section id="auth-section" class="min-h-screen flex items-center justify-center bg-gray-200 p-4 section-fade-in">
-            <div class="w-full max-w-md">
-                <div id="login-form-container">
-                    <div class="bg-white rounded-xl shadow-2xl p-8">
-                        <div class="text-center mb-8">
-                            <h1 class="text-6xl font-extrabold tracking-widest"><span style="color: #4F46E5;">RE</span><span style="color: #0D9488;">VA</span></h1>
-                            <p class="text-gray-500 mt-2">شاهد أكثر، اكسب أكثر</p>
-                        </div>
-                        <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">تسجيل الدخول</h2>
-                        <p class="text-center text-gray-500 mb-8">مرحباً بعودتك!</p>
-                        <div id="login-success-message" class="hidden bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-4" role="alert">
-                          <strong class="font-bold">نجاح!</strong>
-                          <span class="block sm:inline">تم تفعيل حسابك، يمكنك الآن تسجيل الدخول.</span>
-                        </div>
-                        <form id="login-form">
-                            <div class="mb-4">
-                                <label for="login-email" class="block text-sm font-bold text-gray-600 mb-2">البريد الإلكتروني</label>
-                                <input type="email" id="login-email" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="example@mail.com" required>
-                            </div>
-                            <div class="mb-6">
-                                <label for="login-password" class="block text-sm font-bold text-gray-600 mb-2">كلمة المرور</label>
-                                <input type="password" id="login-password" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="********" required>
-                            </div>
-                            <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                                <i class="fas fa-sign-in-alt mr-2"></i>دخول
-                            </button>
-                        </form>
-                        <p class="text-center text-sm text-gray-600 mt-6">
-                            ليس لديك حساب؟ <a href="#" id="show-register-link" class="text-teal-600 hover:underline font-bold">إنشاء حساب جديد</a>
-                        </p>
-                    </div>
-                </div>
+    <section class="hero">
+        <h1>يا بلبلة ❤️</h1>
+        <p>أنتِ الفن.. وأنتِ الرسالة</p>
+    </section>
 
-                <div id="register-form-container" class="hidden">
-                     <div class="bg-white rounded-xl shadow-2xl p-8">
-                        <h2 class="text-3xl font-bold text-center text-gray-800 mb-2">حساب جديد</h2>
-                        <p class="text-center text-gray-500 mb-6">انضم إلينا وابدأ في كسب المال الآن!</p>
-                        
-                        <button id="google-signup-btn" class="w-full bg-white border border-gray-300 text-gray-700 font-bold py-3 px-4 rounded-lg transition duration-300 hover:bg-gray-50 flex items-center justify-center">
-                            <img src="https://www.google.com/favicon.ico" alt="Google icon" class="w-5 h-5 mr-3">
-                            متابعة باستخدام Google
-                        </button>
+    <div class="letter-paper">
+        <!-- صورة نبيلة المضافة -->
+        <div class="profile-img-container">
+            <img src="image_2bb9da.jpg" alt="نبيلة">
+        </div>
 
-                        <div class="my-4 flex items-center">
-                            <hr class="w-full border-gray-300">
-                            <span class="px-2 text-gray-500 text-sm">أو</span>
-                            <hr class="w-full border-gray-300">
-                        </div>
-
-                        <form id="register-form">
-                            <div class="mb-4">
-                                <label for="register-name" class="block text-sm font-bold text-gray-600 mb-2">الاسم</label>
-                                <input type="text" id="register-name" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="حروف فقط" required>
-                            </div>
-                             <div class="mb-4">
-                                <label for="register-phone" class="block text-sm font-bold text-gray-600 mb-2">رقم الهاتف</label>
-                                <input type="tel" id="register-phone" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="01xxxxxxxxx" required>
-                            </div>
-                            <div class="mb-4">
-                                <label for="register-gender" class="block text-sm font-bold text-gray-600 mb-2">النوع</label>
-                                <select id="register-gender" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                                    <option value="" disabled selected>اختر النوع</option>
-                                    <option value="male">ذكر</option>
-                                    <option value="female">أنثى</option>
-                                </select>
-                            </div>
-                            <div class="mb-4">
-                                <label for="register-email" class="block text-sm font-bold text-gray-600 mb-2">البريد الإلكتروني</label>
-                                <input type="email" id="register-email" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="example@mail.com" required>
-                            </div>
-                            <div class="mb-6">
-                                <label for="register-password" class="block text-sm font-bold text-gray-600 mb-2">كلمة المرور</label>
-                                <input type="password" id="register-password" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="********" required>
-                            </div>
-                            <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                                <i class="fas fa-user-plus mr-2"></i>إنشاء حساب
-                            </button>
-                        </form>
-                        <p class="text-center text-sm text-gray-600 mt-6">
-                            لديك حساب بالفعل؟ <a href="#" id="show-login-link" class="text-teal-600 hover:underline font-bold">تسجيل الدخول</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <h2 class="letter-header">يا بلبلة ❤️</h2>
         
-        <section id="email-verification-section" class="hidden min-h-screen flex items-center justify-center bg-gray-200 p-4 section-fade-in">
-             <div class="w-full max-w-md">
-                <div class="bg-white rounded-xl shadow-2xl p-8 text-center">
-                    <i class="fas fa-envelope-open-text text-5xl text-teal-500 mb-4"></i>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">تفعيل البريد الإلكتروني</h2>
-                    <p class="text-gray-600 mb-6">لقد أرسلنا رمز تفعيل مكون من 6 أرقام إلى <br><strong id="verification-email" class="font-bold"></strong></p>
-                    <form id="email-verification-form">
-                        <div class="flex justify-center gap-2 mb-6" dir="ltr">
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                        </div>
-                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                            <i class="fas fa-check-circle mr-2"></i>تأكيد الرمز
-                        </button>
-                    </form>
-                    <p class="text-sm text-gray-600 mt-6">
-                        لم تستلم الرمز؟ <a href="#" id="resend-email-code-link" class="text-teal-600 hover:underline font-bold">إعادة الإرسال</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section id="phone-verification-section" class="hidden min-h-screen flex items-center justify-center bg-gray-200 p-4 section-fade-in">
-             <div class="w-full max-w-md">
-                <div class="bg-white rounded-xl shadow-2xl p-8 text-center">
-                    <i class="fas fa-mobile-alt text-5xl text-teal-500 mb-4"></i>
-                    <h2 class="text-3xl font-bold text-gray-800 mb-2">تفعيل رقم الهاتف</h2>
-                    <p class="text-gray-600 mb-6">لقد أرسلنا رمز تفعيل مكون من 6 أرقام إلى <br><strong id="verification-phone-display" class="font-bold"></strong></p>
-                    <form id="phone-verification-form-register">
-                        <div class="flex justify-center gap-2 mb-6" dir="ltr">
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                            <input type="text" maxlength="1" class="verification-input bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                        </div>
-                        <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition duration-300">
-                            <i class="fas fa-check-circle mr-2"></i>تأكيد الرمز
-                        </button>
-                    </form>
-                    <p class="text-sm text-gray-600 mt-6">
-                        لم تستلم الرمز؟ <a href="#" id="resend-phone-code-link" class="text-teal-600 hover:underline font-bold">إعادة الإرسال</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <main id="main-app-section" class="hidden">
-            <div class="flex h-screen bg-gray-200">
-                <aside class="w-64 bg-gray-800 text-white flex-shrink-0 hidden md:flex md:flex-col">
-                    <div class="p-6 text-center">
-                        <h1 class="text-5xl font-bold tracking-widest text-white"><span style="color: #4F46E5;">RE</span><span style="color: #0D9488;">VA</span></h1>
-                    </div>
-                    <nav class="mt-10 flex-1">
-                        <a href="#" data-section="dashboard" class="nav-link bg-gray-700 block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-tachometer-alt w-6 mr-2"></i> لوحة التحكم</a>
-                        <a href="#" data-section="videos" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-video w-6 mr-2"></i> شاهد واربح</a>
-                        <a href="#" data-section="subscribe" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-gem w-6 mr-2"></i> اشترك</a>
-                        <a href="#" data-section="withdraw" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-hand-holding-usd w-6 mr-2"></i> سحب الأرباح</a>
-                        <a href="#" data-section="profile" class="nav-link block py-3 px-6 text-sm hover:bg-gray-700 transition"><i class="fas fa-user-cog w-6 mr-2"></i> الملف الشخصي</a>
-                    </nav>
-                    <div class="p-4">
-                        <button id="logout-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-lg transition">
-                            <i class="fas fa-sign-out-alt mr-2"></i>تسجيل الخروج
-                        </button>
-                    </div>
-                </aside>
-
-                <div class="flex-1 flex flex-col overflow-hidden">
-                    <header class="bg-white shadow-md p-4 flex justify-between items-center">
-                         <h2 id="page-title" class="text-xl font-bold">لوحة التحكم</h2>
-                        <div class="flex items-center gap-2">
-                            <button id="deposit-btn" class="bg-green-500 hover:bg-green-600 text-white font-bold px-3 py-2 rounded-full text-xs transition">
-                                <i class="fas fa-plus mr-1"></i> شحن الرصيد
-                            </button>
-                            <div class="bg-teal-100 text-teal-800 font-bold px-4 py-2 rounded-full text-sm">
-                                <span>الرصيد: </span>
-                                <span id="user-balance">0.00</span> ج.م
-                            </div>
-                            <div class="bg-indigo-100 text-indigo-800 font-bold px-3 py-2 rounded-full text-xs">
-                                <i class="fas fa-star mr-1"></i><span id="header-user-plan"></span>
-                            </div>
-                            <img src="https://placehold.co/40x40/E2E8F0/4A5568?text=U" alt="User Avatar" class="rounded-full w-10 h-10 border-2 border-gray-300">
-                        </div>
-                    </header>
-
-                    <div class="flex-1 p-4 md:p-6 overflow-y-auto pb-24">
-                        <div id="dashboard-content" class="content-section section-fade-in">
-                           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
-                                <div class="bg-white p-6 rounded-xl shadow-lg flex items-center">
-                                    <div class="bg-teal-500 p-3 rounded-full text-white mr-4">
-                                        <i class="fas fa-money-bill-wave text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm text-gray-500">إجمالي الأرباح</p>
-                                        <p class="text-2xl font-bold" id="total-earnings-stat">0.00 ج.م</p>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl shadow-lg flex items-center">
-                                    <div class="bg-indigo-500 p-3 rounded-full text-white mr-4">
-                                        <i class="fas fa-film text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm text-gray-500">فيديوهات تمت مشاهدتها</p>
-                                        <p class="text-2xl font-bold" id="videos-watched-stat">0</p>
-                                    </div>
-                                </div>
-                                <div class="bg-white p-6 rounded-xl shadow-lg flex items-center">
-                                    <div class="bg-amber-500 p-3 rounded-full text-white mr-4">
-                                        <i class="fas fa-users text-xl"></i>
-                                    </div>
-                                    <div>
-                                        <p class="text-sm text-gray-500">عدد الإحالات</p>
-                                        <p class="text-2xl font-bold">0</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="bg-white p-6 rounded-xl shadow-lg">
-                                <h3 class="text-lg font-bold mb-4">قم بدعوة أصدقائك واربح!</h3>
-                                <p class="text-gray-600 mb-4">شارك رابط الإحالة الخاص بك واحصل على عمولة.</p>
-                                <div class="flex items-center bg-gray-100 p-2 rounded-lg">
-                                    <input type="text" id="referral-link" value="https://reva.com/ref/12345" class="flex-1 bg-transparent border-none focus:outline-none text-sm p-2" readonly>
-                                    <button id="copy-ref-link-btn" class="bg-teal-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-teal-700 transition">نسخ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div id="videos-content" class="content-section hidden section-fade-in">
-                            <div id="video-list" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
-                        </div>
-
-                        <div id="subscribe-content" class="content-section hidden section-fade-in">
-                            <div id="subscription-section" class="max-w-4xl mx-auto">
-                                <h3 class="text-2xl font-bold mb-2 text-center">باقة اشتراكك</h3>
-                                <div class="bg-indigo-100 text-indigo-800 p-4 rounded-lg text-center font-bold text-lg mb-6">
-                                    <span>باقتك الحالية: </span>
-                                    <span id="current-plan-name"></span>
-                                </div>
-                                <h3 class="text-xl font-bold mb-6 text-center">قم بترقية باقتك لمشاهدة المزيد!</h3>
-                                <div id="plans-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-center"></div>
-                            </div>
-                        </div>
-
-                        <div id="withdraw-content" class="content-section hidden section-fade-in">
-                            <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
-                                <h3 class="text-2xl font-bold mb-6 text-center">سحب الأرباح</h3>
-                                <div class="bg-indigo-100 border-r-4 border-indigo-500 text-indigo-700 p-4 rounded-lg mb-6">
-                                    <p class="font-bold">الحد الأدنى للسحب هو 50.00 ج.م</p>
-                                </div>
-                                <form id="withdraw-form">
-                                    <div class="mb-4">
-                                        <label for="withdraw-method" class="block text-sm font-bold text-gray-600 mb-2">اختر وسيلة الدفع</label>
-                                        <select id="withdraw-method" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500">
-                                            <option>Vodafone Cash</option>
-                                            <option>Orange Cash</option>
-                                            <option>Etisalat Cash</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="withdraw-account" class="block text-sm font-bold text-gray-600 mb-2">رقم المحفظة</label>
-                                        <input type="text" id="withdraw-account" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                                    </div>
-                                    <div class="mb-6">
-                                        <label for="withdraw-amount" class="block text-sm font-bold text-gray-600 mb-2">المبلغ (ج.م)</label>
-                                        <input type="number" id="withdraw-amount" min="50" step="1" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                                    </div>
-                                    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition">
-                                        <i class="fas fa-paper-plane mr-2"></i>إرسال الطلب
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
-
-                        <div id="profile-content" class="content-section hidden section-fade-in">
-                            <div class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-lg">
-                                <h3 class="text-2xl font-bold mb-6 text-center">بيانات الحساب</h3>
-                                
-                                <div class="space-y-4">
-                                    <div class="mb-4">
-                                        <label for="profile-name" class="block text-sm font-bold text-gray-600 mb-2">الاسم</label>
-                                        <div class="flex items-center gap-2">
-                                            <input type="text" id="profile-name" class="w-full px-4 py-3 bg-gray-200 rounded-lg border" value="اسم المستخدم" readonly>
-                                            <button type="button" id="edit-name-btn" class="bg-gray-200 hover:bg-gray-300 text-gray-700 font-bold p-3 rounded-lg transition">
-                                                <i class="fas fa-pen"></i>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="profile-email" class="block text-sm font-bold text-gray-600 mb-2">البريد الإلكتروني</label>
-                                        <input type="email" id="profile-email" class="w-full px-4 py-3 bg-gray-200 rounded-lg border" value="mmm@gmail.com" readonly>
-                                    </div>
-                                    <div class="mb-4">
-                                        <label for="profile-phone" class="block text-sm font-bold text-gray-600 mb-2">رقم الهاتف</label>
-                                        <input type="tel" id="profile-phone" class="w-full px-4 py-3 bg-gray-200 rounded-lg border" value="01234567890" readonly>
-                                    </div>
-                                     <div class="mb-4">
-                                        <label for="profile-gender" class="block text-sm font-bold text-gray-600 mb-2">النوع</label>
-                                        <input type="text" id="profile-gender" class="w-full px-4 py-3 bg-gray-200 rounded-lg border" value="ذكر" readonly>
-                                    </div>
-                                    <button type="button" id="save-name-btn" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition hidden">
-                                        <i class="fas fa-save mr-2"></i>حفظ الاسم
-                                    </button>
-                                </div>
-                                
-                                <hr class="my-6">
-
-                                <button id="show-change-password-modal-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-4 rounded-lg transition">
-                                    <i class="fas fa-key mr-2"></i>تغيير كلمة المرور
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <nav class="md:hidden fixed bottom-0 left-0 right-0 bg-gray-800 text-white flex justify-around p-1 shadow-lg z-10">
-                        <a href="#" data-section="dashboard" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md active">
-                            <i class="fas fa-tachometer-alt text-xl mb-1"></i><span>لوحة التحكم</span>
-                        </a>
-                        <a href="#" data-section="videos" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
-                            <i class="fas fa-video text-xl mb-1"></i><span>شاهد واربح</span>
-                        </a>
-                         <a href="#" data-section="subscribe" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
-                            <i class="fas fa-gem text-xl mb-1"></i><span>اشترك</span>
-                        </a>
-                        <a href="#" data-section="withdraw" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
-                            <i class="fas fa-hand-holding-usd text-xl mb-1"></i><span>سحب الأرباح</span>
-                        </a>
-                        <a href="#" data-section="profile" class="bottom-nav-link flex flex-col items-center text-center text-xs w-full p-2 rounded-md">
-                            <i class="fas fa-user-cog text-xl mb-1"></i><span>الملف الشخصي</span>
-                        </a>
-                    </nav>
-                </div>
-            </div>
-        </main>
-    </div>
-
-    <div id="video-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-2xl relative">
-            <button id="close-modal-btn" class="absolute -top-3 -right-3 bg-red-500 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg z-10">&times;</button>
-            <div id="video-player-container" class="aspect-video"></div>
-            <div class="p-4">
-                <div id="timer-container">
-                    <div class="progress-bar-container">
-                        <div id="progress-bar" class="progress-bar" style="width: 0%;"></div>
-                    </div>
-                    <p class="text-center text-sm mt-2">يجب مشاهدة الفيديو لمدة <span id="video-duration-text"></span> ثانية.</p>
-                </div>
-                <button id="claim-reward-btn" class="w-full bg-teal-600 text-white font-bold py-3 px-4 rounded-lg transition opacity-50 cursor-not-allowed" disabled>
-                    <i class="fas fa-check-circle mr-2"></i> المطالبة بالمكافأة
-                </button>
-            </div>
-        </div>
-    </div>
-    
-    <div id="deposit-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
-            <button id="close-deposit-modal-btn" class="absolute -top-3 -right-3 bg-red-500 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg z-10">&times;</button>
-            <div class="p-8">
-                <h3 class="text-2xl font-bold mb-6 text-center">شحن الرصيد</h3>
-                <form id="deposit-form">
-                    <div class="mb-4">
-                        <label for="deposit-amount" class="block text-sm font-bold text-gray-600 mb-2">المبلغ (ج.م)</label>
-                        <input type="number" id="deposit-amount" min="10" step="1" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required placeholder="ادخل المبلغ">
-                    </div>
-                    <div class="flex border-b mb-4">
-                        <button type="button" data-payment-tab="wallets" class="payment-tab flex-1 py-2 font-bold border-b-2 active">المحافظ الإلكترونية</button>
-                        <button type="button" data-payment-tab="card" class="payment-tab flex-1 py-2 font-bold text-gray-500 border-b-2 border-transparent">البطاقة البنكية</button>
-                    </div>
-                    <div id="wallets-payment-content" class="payment-tab-content">
-                        <p class="text-sm text-gray-600 mb-4">اختر محفظتك وأدخل رقم هاتفك.</p>
-                        <div class="mb-4">
-                            <select id="wallet-provider" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500">
-                                <option>Vodafone Cash</option>
-                                <option>Orange Money</option>
-                                <option>Etisalat Cash</option>
-                            </select>
-                        </div>
-                        <div class="mb-6">
-                            <label for="wallet-phone" class="block text-sm font-bold text-gray-600 mb-2">رقم الهاتف</label>
-                            <input type="tel" id="wallet-phone" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="01xxxxxxxxx">
-                        </div>
-                    </div>
-                    <div id="card-payment-content" class="payment-tab-content hidden">
-                        <p class="text-sm text-gray-600 mb-4">أدخل بيانات بطاقتك البنكية.</p>
-                        <div class="mb-4">
-                            <label for="card-number" class="block text-sm font-bold text-gray-600 mb-2">رقم البطاقة</label>
-                            <input type="text" id="card-number" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder=".... .... .... ....">
-                        </div>
-                        <div class="flex gap-4 mb-6">
-                            <div class="w-1/2">
-                                <label for="card-expiry" class="block text-sm font-bold text-gray-600 mb-2">تاريخ الانتهاء</label>
-                                <input type="text" id="card-expiry" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="MM / YY">
-                            </div>
-                            <div class="w-1/2">
-                                <label for="card-cvc" class="block text-sm font-bold text-gray-600 mb-2">CVC</label>
-                                <input type="text" id="card-cvc" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="123">
-                            </div>
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition">
-                        <i class="fas fa-shield-alt mr-2"></i> تأكيد الدفع
-                    </button>
-                </form>
-            </div>
-        </div>
-    </div>
-    
-    <div id="change-password-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-white rounded-xl shadow-2xl w-full max-w-md relative">
-            <button id="close-password-modal-btn" class="absolute -top-3 -right-3 bg-red-500 text-white rounded-full h-8 w-8 flex items-center justify-center text-lg z-10">&times;</button>
+        <div class="letter-body">
+            <p>
+                بجد مش عارف أوصفلك انتي بقيتي إيه بالنسبالي، بس كل اللي أعرفه إنك أجمل حاجة حصلتلي. 
+                من يوم ما دخلتي حياتي وانتي مغيرة كل حاجة للأحلى، حتى أيامي بقت ليها طعم تاني.
+            </p>
             
-            <div id="password-phone-verification-step" class="p-8">
-                <h3 class="text-2xl font-bold mb-6 text-center">إثبات الهوية</h3>
-                <p class="text-center text-gray-600 mb-4">لتغيير كلمة المرور، الرجاء إدخال رقم الهاتف المسجل بحسابك.</p>
-                <form id="password-phone-verification-form">
-                    <div class="mb-4">
-                        <label for="verification-phone" class="block text-sm font-bold text-gray-600 mb-2">رقم الهاتف</label>
-                        <input type="tel" id="password-verification-phone" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" placeholder="01xxxxxxxxx" required>
-                    </div>
-                    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition">
-                        <i class="fas fa-check mr-2"></i>تحقق
-                    </button>
-                </form>
-            </div>
-    
-            <div id="new-password-step" class="hidden p-8">
-                 <h3 class="text-2xl font-bold mb-6 text-center">إدخال كلمة المرور الجديدة</h3>
-                 <form id="new-password-form">
-                    <div class="mb-4">
-                        <label for="new-password-input" class="block text-sm font-bold text-gray-600 mb-2">كلمة المرور الجديدة</label>
-                        <input type="password" id="new-password-input" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                    </div>
-                     <div class="mb-6">
-                        <label for="confirm-new-password-input" class="block text-sm font-bold text-gray-600 mb-2">تأكيد كلمة المرور الجديدة</label>
-                        <input type="password" id="confirm-new-password-input" class="w-full px-4 py-3 bg-gray-100 rounded-lg border focus:outline-none focus:ring-2 focus:ring-teal-500" required>
-                    </div>
-                    <button type="submit" class="w-full bg-teal-600 hover:bg-teal-700 text-white font-bold py-3 px-4 rounded-lg transition">
-                        <i class="fas fa-save mr-2"></i>حفظ كلمة المرور الجديدة
-                    </button>
-                 </form>
-            </div>
+            <span class="heart-divider">❦ ❤️ ❦</span>
+
+            <p>
+                بحب كلامك، بحب ضحكتك، بحب طريقتك، وبحب كل تفصيلة فيكي من غير ما أحس. 
+                انتي بقيتي جزء كبير من قلبي، ومكانك فيه محدش يقدر ياخده.
+            </p>
+
+            <p>
+                لما بكون مضايق، مجرد وجودك بيهون عليا الدنيا، ولما بكون مبسوط بحب أشاركك كل حاجة، لأنك ببساطة أقرب حد لروحي[cite: 1].
+            </p>
+
+            <span class="heart-divider">❦ ❤️ ❦</span>
+
+            <p style="font-weight: bold; color: var(--heart-red); font-size: 2rem;">
+                أنا بحبك أوي يا بلبلة، وحبك جوايا بيكبر كل يوم، وبتمنى أفضل معاكي وجنبك على طول ❤️[cite: 1]
+            </p>
         </div>
     </div>
 
-    <div id="toast-notification" class="fixed bottom-5 right-5 bg-gray-800 text-white py-3 px-6 rounded-lg shadow-lg transform translate-y-20 opacity-0 transition-all duration-500 z-50">
-        <p id="toast-message"></p>
-    </div>
+    <footer>
+        <p class="final-word">دائماً وأبداً.. لكي وحدك</p>
+        <p style="opacity: 0.7;">أجمل بورتفوليو لأجمل إنسانة في حياتي</p>
+    </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // State
-            const appState = {
-                loggedIn: false,
-                accounts: {
-                    "mmm@gmail.com": { password: "123", verified: true, data: { name: "Demo User", email: "mmm@gmail.com", phone: "01234567890", gender: "male", balance: 0, totalEarnings: 0, videosWatched: 0, subscription: 'Free' }},
-                    "markomarko@gmail.com": { password: "12345", verified: true, data: { name: "Marko", email: "markomarko@gmail.com", phone: "01000000000", gender: "male", balance: 10000, totalEarnings: 0, videosWatched: 0, subscription: 'Free' }},
-                    "menaazmy530@gmail.com": { password: "123456", verified: true, data: { name: "mena", email: "menaazmy530@gmail.com", phone: "01207841582", gender: "male", balance: 0, totalEarnings: 0, videosWatched: 0, subscription: 'Free' }}
-                },
-                currentUser: null,
-                tempUser: null,
-                videos: [
-                    { id: 1, title: "New Video 1", duration: 10, youtubeId: "RYEZJDqXKu8", watched: false },
-                    { id: 2, title: "New Video 2", duration: 10, youtubeId: "8ZSoVimwDI4", watched: false },
-                    { id: 3, title: "New Video 3", duration: 10, youtubeId: "9zNkpKkwspA", watched: false },
-                    { id: 4, title: "New Video 4", duration: 10, youtubeId: "KfcsCr2hU3k", watched: false },
-                    { id: 5, title: "New Video 5", duration: 10, youtubeId: "HVwuy90VNbQ", watched: false },
-                    { id: 6, title: "New Video 6", duration: 10, youtubeId: "ZUsnaGcM7FY", watched: false },
-                    { id: 7, title: "New Video 7", duration: 10, youtubeId: "P4NTQwFt3Dg", watched: false }
-                ],
-                plans: {
-                    'Free':  { name: 'المجانية', videos: 2,  price: 0,       reward: 1,  icon: 'fa-star' },
-                    'A1':    { name: 'A1',      videos: 5,  price: 2500,    reward: 17, icon: 'fa-certificate' },
-                    'A2':    { name: 'A2',      videos: 10, price: 10000,   reward: 35, icon: 'fa-award' },
-                    'A3':    { name: 'A3',      videos: 20, price: 30000,   reward: 50, icon: 'fa-medal' },
-                    'A4':    { name: 'A4',      videos: 30, price: 48000,   reward: 55, icon: 'fa-trophy' },
-                    'A5':    { name: 'A5',      videos: 35, price: 70000,   reward: 67, icon: 'fa-gem' },
-                    'A6':    { name: 'A6',      videos: 45, price: 105000,  reward: 78, icon: 'fa-crown' }
-                },
-                currentVideo: null,
-                timerInterval: null
-            };
-
-            // DOM Elements
-            const allElements = {
-                authSection: document.getElementById('auth-section'),
-                emailVerificationSection: document.getElementById('email-verification-section'),
-                phoneVerificationSection: document.getElementById('phone-verification-section'),
-                mainAppSection: document.getElementById('main-app-section'),
-                loginForm: document.getElementById('login-form'),
-                registerForm: document.getElementById('register-form'),
-                emailVerificationForm: document.getElementById('email-verification-form'),
-                phoneVerificationFormRegister: document.getElementById('phone-verification-form-register'),
-                logoutBtn: document.getElementById('logout-btn'),
-                navLinks: document.querySelectorAll('.nav-link, .bottom-nav-link'),
-                contentSections: document.querySelectorAll('.content-section'),
-                pageTitle: document.getElementById('page-title'),
-                userBalance: document.getElementById('user-balance'),
-                totalEarningsStat: document.getElementById('total-earnings-stat'),
-                videosWatchedStat: document.getElementById('videos-watched-stat'),
-                videoList: document.getElementById('video-list'),
-                videoModal: document.getElementById('video-modal'),
-                closeModalBtn: document.getElementById('close-modal-btn'),
-                videoPlayer: document.getElementById('video-player-container'),
-                progressBar: document.getElementById('progress-bar'),
-                claimRewardBtn: document.getElementById('claim-reward-btn'),
-                videoDurationText: document.getElementById('video-duration-text'),
-                currentPlanName: document.getElementById('current-plan-name'),
-                plansContainer: document.getElementById('plans-container'),
-                depositBtn: document.getElementById('deposit-btn'),
-                depositModal: document.getElementById('deposit-modal'),
-                closeDepositModalBtn: document.getElementById('close-deposit-modal-btn'),
-                depositForm: document.getElementById('deposit-form'),
-                paymentTabs: document.querySelectorAll('.payment-tab'),
-                paymentTabContents: document.querySelectorAll('.payment-tab-content'),
-                toast: document.getElementById('toast-notification'),
-                toastMessage: document.getElementById('toast-message'),
-                showRegisterLink: document.getElementById('show-register-link'),
-                showLoginLink: document.getElementById('show-login-link'),
-                loginFormContainer: document.getElementById('login-form-container'),
-                registerFormContainer: document.getElementById('register-form-container'),
-                verificationEmail: document.getElementById('verification-email'),
-                verificationPhoneDisplay: document.getElementById('verification-phone-display'),
-                emailVerificationInputs: document.querySelectorAll('#email-verification-form .verification-input'),
-                phoneVerificationInputsRegister: document.querySelectorAll('#phone-verification-form-register .verification-input'),
-                resendEmailCodeLink: document.getElementById('resend-email-code-link'),
-                resendPhoneCodeLink: document.getElementById('resend-phone-code-link'),
-                googleSignupBtn: document.getElementById('google-signup-btn'),
-                loginSuccessMessage: document.getElementById('login-success-message'),
-                profileNameInput: document.getElementById('profile-name'),
-                profileEmailInput: document.getElementById('profile-email'),
-                profilePhoneInput: document.getElementById('profile-phone'),
-                profileGenderInput: document.getElementById('profile-gender'),
-                editNameBtn: document.getElementById('edit-name-btn'),
-                saveNameBtn: document.getElementById('save-name-btn'),
-                showChangePasswordModalBtn: document.getElementById('show-change-password-modal-btn'),
-                changePasswordModal: document.getElementById('change-password-modal'),
-                closePasswordModalBtn: document.getElementById('close-password-modal-btn'),
-                passwordPhoneVerificationStep: document.getElementById('password-phone-verification-step'),
-                newPasswordStep: document.getElementById('new-password-step'),
-                passwordPhoneVerificationForm: document.getElementById('password-phone-verification-form'),
-                newPasswordForm: document.getElementById('new-password-form'),
-                registerNameInput: document.getElementById('register-name'),
-                headerUserPlan: document.getElementById('header-user-plan'),
-            };
-
-            // --- Functions ---
-            
-            function showToast(message, isSuccess = true) {
-                allElements.toastMessage.textContent = message;
-                allElements.toast.style.backgroundColor = isSuccess ? '#22C55E' : '#EF4444'; // green-500 or red-500
-                allElements.toast.classList.add('show');
-                setTimeout(() => { allElements.toast.classList.remove('show'); }, 3000);
-            }
-
-            function logout() {
-                appState.loggedIn = false;
-                appState.currentUser = null;
-                updateUI();
-                allElements.loginForm.reset();
-                allElements.registerForm.reset();
-                allElements.emailVerificationForm.reset();
-                allElements.phoneVerificationFormRegister.reset();
-                allElements.depositForm.reset();
-                allElements.loginSuccessMessage.classList.add('hidden');
-            }
-
-            function updateUI() {
-                if (appState.loggedIn) {
-                    allElements.authSection.classList.add('hidden');
-                    allElements.emailVerificationSection.classList.add('hidden');
-                    allElements.phoneVerificationSection.classList.add('hidden');
-                    allElements.mainAppSection.classList.remove('hidden');
-                    
-                    const userData = appState.accounts[appState.currentUser].data;
-                    allElements.profileNameInput.value = userData.name;
-                    allElements.profileEmailInput.value = userData.email;
-                    allElements.profilePhoneInput.value = userData.phone;
-                    allElements.profileGenderInput.value = userData.gender === 'male' ? 'ذكر' : 'أنثى';
-                    
-                    updateDashboard();
-                    renderVideoList();
-                } else {
-                    allElements.authSection.classList.remove('hidden');
-                    allElements.mainAppSection.classList.add('hidden');
-                }
-            }
-
-            function updateDashboard() {
-                const userData = appState.accounts[appState.currentUser].data;
-                allElements.userBalance.textContent = userData.balance.toFixed(2);
-                allElements.totalEarningsStat.textContent = `${userData.totalEarnings.toFixed(2)} ج.م`;
-                allElements.videosWatchedStat.textContent = userData.videosWatched;
-                
-                // Update header user plan
-                const planKey = userData.subscription;
-                const plan = appState.plans[planKey];
-                if (plan && allElements.headerUserPlan) {
-                    allElements.headerUserPlan.textContent = plan.name;
-                }
-            }
-
-            function showSection(sectionId) {
-                allElements.contentSections.forEach(section => section.classList.add('hidden'));
-                document.getElementById(`${sectionId}-content`).classList.remove('hidden');
-                
-                if (sectionId === 'subscribe') {
-                    renderSubscriptionPlans();
-                }
-
-                let newTitle = '';
-                allElements.navLinks.forEach(link => {
-                    const isBottomLink = link.classList.contains('bottom-nav-link');
-                    link.classList.remove(isBottomLink ? 'active' : 'bg-gray-700');
-                    if (isBottomLink) link.classList.add('text-gray-400');
-
-                    if (link.dataset.section === sectionId) {
-                        link.classList.add(isBottomLink ? 'active' : 'bg-gray-700');
-                        if (isBottomLink) link.classList.remove('text-gray-400');
-                        newTitle = isBottomLink ? link.querySelector('span').textContent.trim() : link.textContent.trim();
-                    }
-                });
-                allElements.pageTitle.textContent = newTitle;
-            }
-
-            function renderVideoList() {
-                const userData = appState.accounts[appState.currentUser].data;
-                const currentPlan = appState.plans[userData.subscription];
-                const rewardPerVideo = currentPlan.reward;
-                
-                allElements.videoList.innerHTML = '';
-                const videoLimit = currentPlan.videos;
-                
-                appState.videos.slice(0, videoLimit).forEach(video => {
-                    allElements.videoList.innerHTML += `
-                        <div class="bg-white rounded-xl shadow-lg overflow-hidden transform hover:-translate-y-1 transition">
-                            <img src="https://i.ytimg.com/vi/${video.youtubeId}/mqdefault.jpg" alt="${video.title}" class="w-full h-32 object-cover">
-                            <div class="p-4">
-                                <h4 class="font-bold text-sm h-10">${video.title}</h4>
-                                <div class="flex justify-between items-center text-xs text-gray-500 mt-2">
-                                    <span><i class="fas fa-clock mr-1"></i> ${video.duration} ثانية</span>
-                                    <span class="font-bold text-teal-600">${rewardPerVideo.toFixed(2)} ج.م</span>
-                                </div>
-                                <button data-video-id="${video.id}" class="watch-btn mt-4 w-full text-sm font-bold py-2 px-4 rounded-lg transition ${video.watched ? 'bg-gray-300 text-gray-500 cursor-not-allowed' : 'bg-indigo-600 hover:bg-indigo-700 text-white'}">
-                                    ${video.watched ? '<i class="fas fa-check-circle mr-2"></i> تمت' : '<i class="fas fa-play mr-2"></i> شاهد'}
-                                </button>
-                            </div>
-                        </div>`;
-                });
-            }
-
-            function renderSubscriptionPlans() {
-                const userData = appState.accounts[appState.currentUser].data;
-                const currentPlanKey = userData.subscription;
-                allElements.currentPlanName.textContent = appState.plans[currentPlanKey].name;
-                allElements.plansContainer.innerHTML = '';
-                Object.keys(appState.plans).forEach(planKey => {
-                    const plan = appState.plans[planKey];
-                    const isCurrent = planKey === currentPlanKey;
-                    allElements.plansContainer.innerHTML += `
-                        <div class="plan-card bg-white p-6 rounded-xl shadow-lg border-2 ${isCurrent ? 'active' : 'border-transparent'}">
-                            <i class="fas ${plan.icon} text-4xl mb-4 ${isCurrent ? 'text-teal-500' : 'text-gray-400'}"></i>
-                            <h4 class="text-xl font-bold">${plan.name}</h4>
-                            <p class="text-gray-500 my-1">${plan.videos} فيديوهات يومياً</p>
-                             <p class="text-gray-600 my-2 text-sm">(${plan.reward} جنيه ربح لكل فيديو)</p>
-                            <p class="text-2xl font-bold mb-4">${plan.price > 0 ? plan.price.toLocaleString() + ' ج.م' : 'مجاناً'}</p>
-                            <button data-plan="${planKey}" class="upgrade-btn w-full font-bold py-2 px-4 rounded-lg transition ${isCurrent ? 'bg-gray-400 cursor-not-allowed' : 'bg-teal-600 hover:bg-teal-700 text-white'}" ${isCurrent ? 'disabled' : ''}>
-                                ${isCurrent ? 'باقتك الحالية' : 'الترقية الآن'}
-                            </button>
-                        </div>`;
-                });
-            }
-
-            function openModal(modal) { modal.classList.remove('hidden'); }
-            function closeModal(modal) { modal.classList.add('hidden'); }
-
-            function startVideoTimer() {
-                const video = appState.currentVideo;
-                let timeLeft = video.duration;
-                allElements.progressBar.style.width = `0%`;
-                appState.timerInterval = setInterval(() => {
-                    timeLeft--;
-                    const progress = ((video.duration - timeLeft) / video.duration) * 100;
-                    allElements.progressBar.style.width = `${progress}%`;
-                    if (timeLeft <= 0) {
-                        clearInterval(appState.timerInterval);
-                        allElements.claimRewardBtn.disabled = false;
-                        allElements.claimRewardBtn.classList.remove('opacity-50', 'cursor-not-allowed');
-                    }
-                }, 1000);
-            }
-            
-            function setupVerificationInputs(inputs) {
-                inputs.forEach((input, index) => {
-                    input.addEventListener('keyup', (e) => {
-                         if (e.key >= 0 && e.key <= 9) {
-                            if(index < inputs.length - 1) inputs[index + 1].focus();
-                        } else if (e.key === 'Backspace') {
-                             if(index > 0) inputs[index - 1].focus();
-                        }
-                    });
-                });
-            }
-
-            // --- Event Listeners ---
-            allElements.showRegisterLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                allElements.loginFormContainer.classList.add('hidden');
-                allElements.registerFormContainer.classList.remove('hidden');
-            });
-
-            allElements.showLoginLink.addEventListener('click', (e) => {
-                e.preventDefault();
-                allElements.registerFormContainer.classList.add('hidden');
-                allElements.loginFormContainer.classList.remove('hidden');
-            });
-
-            allElements.loginForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const email = document.getElementById('login-email').value;
-                const password = document.getElementById('login-password').value;
-                const account = appState.accounts[email];
-
-                if (account && account.password === password) {
-                    if (account.verified) {
-                        appState.loggedIn = true;
-                        appState.currentUser = email;
-                        updateUI();
-                        showSection('dashboard');
-                    } else {
-                        showToast('يجب تفعيل حسابك أولاً!', false);
-                    }
-                } else {
-                    showToast('بيانات الدخول غير صحيحة!', false);
-                }
-            });
-
-            allElements.registerForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const name = allElements.registerNameInput.value;
-                const email = document.getElementById('register-email').value;
-                const password = document.getElementById('register-password').value;
-                const phone = document.getElementById('register-phone').value;
-                const gender = document.getElementById('register-gender').value;
-
-                if (appState.accounts[email]) {
-                    showToast('هذا البريد الإلكتروني مسجل بالفعل!', false);
-                    return;
-                }
-
-                appState.tempUser = { email, password, name, phone, gender };
-                allElements.verificationEmail.textContent = email;
-                allElements.authSection.classList.add('hidden');
-                allElements.emailVerificationSection.classList.remove('hidden');
-            });
-
-            allElements.registerNameInput.addEventListener('input', (e) => {
-                const regex = /^[a-zA-Z\u0600-\u06FF\s]*$/;
-                if (!regex.test(e.target.value)) {
-                    e.target.value = e.target.value.replace(/[^a-zA-Z\u0600-\u06FF\s]/g, '');
-                }
-            });
-            
-            allElements.emailVerificationForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let code = "";
-                allElements.emailVerificationInputs.forEach(input => code += input.value);
-
-                if (code === "123456") {
-                    allElements.emailVerificationSection.classList.add('hidden');
-                    allElements.phoneVerificationSection.classList.remove('hidden');
-                    allElements.verificationPhoneDisplay.textContent = appState.tempUser.phone;
-                } else {
-                    showToast('رمز تفعيل البريد الإلكتروني غير صحيح!', false);
-                }
-            });
-            
-             allElements.phoneVerificationFormRegister.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let code = "";
-                allElements.phoneVerificationInputsRegister.forEach(input => code += input.value);
-
-                if (code === "654321") {
-                    const { email, password, name, phone, gender } = appState.tempUser;
-                    appState.accounts[email] = {
-                        password,
-                        verified: true,
-                        data: { name, email, phone, gender, balance: 0, totalEarnings: 0, videosWatched: 0, subscription: 'Free' }
-                    };
-                    appState.tempUser = null;
-
-                    allElements.phoneVerificationSection.classList.add('hidden');
-                    allElements.authSection.classList.remove('hidden');
-                    allElements.registerFormContainer.classList.add('hidden');
-                    allElements.loginFormContainer.classList.remove('hidden');
-                    allElements.loginSuccessMessage.classList.remove('hidden');
-                    allElements.emailVerificationForm.reset();
-                    allElements.phoneVerificationFormRegister.reset();
-                } else {
-                    showToast('رمز تفعيل الهاتف غير صحيح!', false);
-                }
-            });
-
-            setupVerificationInputs(allElements.emailVerificationInputs);
-            setupVerificationInputs(allElements.phoneVerificationInputsRegister);
-            
-            allElements.googleSignupBtn.addEventListener('click', () => {
-                const email = "google.user@gmail.com";
-                appState.accounts[email] = {
-                    password: "google_user", verified: true,
-                    data: { name: "Google User", email, phone: "01111111111", gender: 'male', balance: 0, totalEarnings: 0, videosWatched: 0, subscription: 'Free' }
-                };
-                appState.loggedIn = true;
-                appState.currentUser = email;
-                updateUI();
-                showSection('dashboard');
-                showToast('تم تسجيل الدخول بنجاح باستخدام Google!');
-            });
-            
-            allElements.resendEmailCodeLink.addEventListener('click', (e) => { e.preventDefault(); showToast('تم إعادة إرسال رمز التفعيل.'); });
-            allElements.resendPhoneCodeLink.addEventListener('click', (e) => { e.preventDefault(); showToast('تم إعادة إرسال رمز التفعيل.'); });
-            
-            allElements.logoutBtn.addEventListener('click', logout);
-            allElements.navLinks.forEach(link => link.addEventListener('click', (e) => { e.preventDefault(); showSection(e.target.closest('[data-section]').dataset.section); }));
-            
-            allElements.videoList.addEventListener('click', (e) => {
-                const button = e.target.closest('.watch-btn');
-                if (button && !button.disabled) {
-                    const videoId = parseInt(button.dataset.videoId);
-                    const video = appState.videos.find(v => v.id === videoId);
-                    appState.currentVideo = video;
-                    allElements.videoDurationText.textContent = video.duration;
-                    allElements.videoPlayer.innerHTML = `<iframe class="w-full h-full" src="https://www.youtube.com/embed/${video.youtubeId}?autoplay=1&controls=0&modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media"></iframe>`;
-                    openModal(allElements.videoModal);
-                    startVideoTimer();
-                }
-            });
-
-            allElements.closeModalBtn.addEventListener('click', () => {
-                closeModal(allElements.videoModal);
-                allElements.videoPlayer.innerHTML = '';
-                clearInterval(appState.timerInterval);
-                allElements.claimRewardBtn.disabled = true;
-                allElements.claimRewardBtn.classList.add('opacity-50', 'cursor-not-allowed');
-            });
-
-            allElements.claimRewardBtn.addEventListener('click', () => {
-                const video = appState.currentVideo;
-                const userData = appState.accounts[appState.currentUser].data;
-                const currentPlan = appState.plans[userData.subscription];
-                const reward = currentPlan.reward;
-                
-                video.watched = true;
-                userData.balance += reward;
-                userData.totalEarnings += reward;
-                userData.videosWatched++;
-                updateDashboard();
-                renderVideoList();
-                allElements.closeModalBtn.click();
-            });
-
-            document.getElementById('copy-ref-link-btn').addEventListener('click', function() {
-                navigator.clipboard.writeText(document.getElementById('referral-link').value).then(() => showToast('تم نسخ رابط الإحالة!'));
-            });
-
-            allElements.plansContainer.addEventListener('click', (e) => {
-                const button = e.target.closest('.upgrade-btn');
-                if (button && !button.disabled) {
-                    const userData = appState.accounts[appState.currentUser].data;
-                    const planKey = button.dataset.plan;
-                    const plan = appState.plans[planKey];
-                    if (userData.balance >= plan.price) {
-                        userData.balance -= plan.price;
-                        userData.subscription = planKey;
-                        showToast(`تمت الترقية إلى باقة ${plan.name} بنجاح!`);
-                        updateDashboard();
-                        renderSubscriptionPlans();
-                        renderVideoList();
-                    } else {
-                        showToast('رصيدك غير كافٍ للترقية!', false);
-                        setTimeout(() => openModal(allElements.depositModal), 500);
-                    }
-                }
-            });
-
-            allElements.depositBtn.addEventListener('click', () => openModal(allElements.depositModal));
-            allElements.closeDepositModalBtn.addEventListener('click', () => closeModal(allElements.depositModal));
-            
-            allElements.paymentTabs.forEach(tab => {
-                tab.addEventListener('click', () => {
-                    allElements.paymentTabs.forEach(t => t.classList.remove('active', 'text-gray-500', 'border-transparent'));
-                    tab.classList.add('active');
-                    allElements.paymentTabContents.forEach(content => content.classList.add('hidden'));
-                    document.getElementById(`${tab.dataset.paymentTab}-payment-content`).classList.remove('hidden');
-                });
-            });
-
-            allElements.depositForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const amount = parseFloat(document.getElementById('deposit-amount').value);
-                const userData = appState.accounts[appState.currentUser].data;
-                if (amount && amount > 0) {
-                    userData.balance += amount;
-                    updateDashboard();
-                    closeModal(allElements.depositModal);
-                    showToast(`تم شحن رصيدك بمبلغ ${amount.toFixed(2)} ج.م بنجاح!`);
-                    allElements.depositForm.reset();
-                } else {
-                    showToast('الرجاء إدخال مبلغ صحيح.', false);
-                }
-            });
-
-            // --- New Profile Logic ---
-            allElements.editNameBtn.addEventListener('click', () => {
-                allElements.profileNameInput.removeAttribute('readonly');
-                allElements.profileNameInput.classList.remove('bg-gray-200');
-                allElements.profileNameInput.classList.add('bg-gray-100');
-                allElements.profileNameInput.focus();
-                allElements.editNameBtn.classList.add('hidden');
-                allElements.saveNameBtn.classList.remove('hidden');
-            });
-            
-            allElements.saveNameBtn.addEventListener('click', () => {
-                const newName = allElements.profileNameInput.value;
-                appState.accounts[appState.currentUser].data.name = newName;
-                
-                allElements.profileNameInput.setAttribute('readonly', true);
-                allElements.profileNameInput.classList.add('bg-gray-200');
-                allElements.profileNameInput.classList.remove('bg-gray-100');
-                allElements.saveNameBtn.classList.add('hidden');
-                allElements.editNameBtn.classList.remove('hidden');
-                showToast('تم تحديث الاسم بنجاح!');
-            });
-            
-            allElements.showChangePasswordModalBtn.addEventListener('click', () => {
-                allElements.passwordPhoneVerificationStep.classList.remove('hidden');
-                allElements.newPasswordStep.classList.add('hidden');
-                allElements.passwordPhoneVerificationForm.reset();
-                allElements.newPasswordForm.reset();
-                openModal(allElements.changePasswordModal);
-            });
-
-            allElements.closePasswordModalBtn.addEventListener('click', () => {
-                closeModal(allElements.changePasswordModal);
-            });
-
-            allElements.passwordPhoneVerificationForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const enteredPhone = document.getElementById('password-verification-phone').value;
-                const correctPhone = appState.accounts[appState.currentUser].data.phone;
-
-                if (enteredPhone === correctPhone) {
-                    allElements.passwordPhoneVerificationStep.classList.add('hidden');
-                    allElements.newPasswordStep.classList.remove('hidden');
-                } else {
-                    showToast('رقم الهاتف غير صحيح!', false);
-                }
-            });
-
-            allElements.newPasswordForm.addEventListener('submit', (e) => {
-                e.preventDefault();
-                const newPassword = document.getElementById('new-password-input').value;
-                const confirmPassword = document.getElementById('confirm-new-password-input').value;
-
-                if (newPassword.length < 6) {
-                     showToast('كلمة المرور يجب أن تكون 6 أحرف على الأقل!', false);
-                     return;
-                }
-                if (newPassword !== confirmPassword) {
-                    showToast('كلمتا المرور غير متطابقتين!', false);
-                    return;
-                }
-
-                appState.accounts[appState.currentUser].password = newPassword;
-                closeModal(allElements.changePasswordModal);
-                showToast('لقد تم تغيير كلمة السر بنجاح.');
-                
-                setTimeout(logout, 1500);
-            });
-            
-            // Initial Load
-            updateUI();
-        });
-    </script>
 </body>
 </html>
